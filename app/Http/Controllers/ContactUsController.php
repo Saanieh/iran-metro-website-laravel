@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use Carbon\Carbon;
-use Request;
-
-use App\Http\Requests;
+use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
 {
-    public function index(){
-        return view('contact-us')->with('title','ارتباط با ما');
+    public function index()
+    {
+        return view('contact-us')->with('title', 'ارتباط با ما');
     }
 
-    public function post(){
-        $input = Request::all();
+    public function post(Request $request)
+    {
+        $input = $request->all();
 
         $comment = new Comment;
 
@@ -24,7 +24,12 @@ class ContactUsController extends Controller
         $comment->comment = $input['comment'];
         $comment->commented_on = Carbon::now();
 
-        $comment->save();
+        $session = $request->session();
+
+        if ($comment->save())
+            $session->flash('msg', 'با سپاس از پیام شما');
+        else
+            $session->flash('err', 'خطا در ارسال پیام');
 
         return redirect('/');
     }
