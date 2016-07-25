@@ -11,14 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index')->with('title', 'ایران مترو');
-});
+Route::get('/', 'HomeController@index');
 
 Route::get('/contact-us', 'ContactUsController@index');
 
 Route::post('/contact-us', 'ContactUsController@post');
 
-Route::get('/about', function () {
-    return view('about')->with('title', 'درباره ما');
-});
+Route::get('/about', 'AboutController@index');
