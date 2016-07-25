@@ -27,19 +27,19 @@
 
     <div class="slideshow-container">
 
-        <div class="mySlides fade">
+        <div class="mySlides slideFade">
             <div class="farsi numbertext">3 / 1</div>
             <img class="slideImg" src="img/poster%201.jpg">
             <!--<div class="text">Caption Text</div>-->
         </div>
 
-        <div class="mySlides fade">
+        <div class="mySlides slideFade">
             <div class="farsi numbertext" style="color: #333333">3 / 2</div>
             <img class="slideImg" src="img/poster%202.jpg">
             <!--<div class="text">Caption Two</div>-->
         </div>
 
-        <div class="mySlides fade">
+        <div class="mySlides slideFade">
             <div class="farsi numbertext">3 / 3</div>
             <img class="slideImg" src="img/poster%203.jpg" style="width:240px">
             <!--<div class="text">Caption Three</div>-->
