@@ -2,10 +2,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="lib/animate.css"/>
     <link rel="stylesheet" href="css/slider.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <title>{{$title}}</title>
 </head>
 
@@ -19,7 +19,7 @@
 
 
 <div id="menu">
-    <ul style="position: absolute; right: 30px; display: inline; margin-bottom: 10px">
+    <ul style="position: absolute; right: 30px; display: inline; margin-bottom: 10px; padding: 10px">
         <a href="/">
             <li class="link">خانه</li>
         </a>
@@ -31,7 +31,7 @@
         </a>
     </ul>
 
-    <ul style="position: absolute; left: 0px; display: inline; top: 0px;">
+    <ul style="position: absolute; left: 0px; display: inline; top: 0px; padding: 10px">
         @if (isset($loggedIn))
             <a href="/logout">
                 <li class="link">خروج</li>
