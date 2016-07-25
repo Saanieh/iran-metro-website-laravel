@@ -21,22 +21,6 @@
             width: 130px;
         }
 
-        #submitBtn {
-            background: #0066dd;
-            border: solid 2px #2100d9;
-            padding: 10px;
-            padding-right: 75px;
-            padding-left: 75px;
-            margin-bottom: -15px;
-            transition-property: width;
-            transition-duration: 0.5s;
-        }
-
-        #submitBtn:hover {
-            background: #3690fa;
-            border: solid 2px #2100d9;
-        }
-
         .error {
             color: firebrick;
             margin-right: 10px;
@@ -57,32 +41,31 @@
 
     <div dir="rtl" class="textBox" style="max-width: 700px">
         <form onsubmit="return onClick()" method="post" action="/contact-us">
-            <div class="formRow">
-                <span class="inputTitle">نام :</span>
-                <input id="name" name="name" type="text">
-                <span class="error" id="nameErr">وارد کردن نام الزامی است</span>
-            </div>
+            <div class="form-group">
+                <div class="formRow">
+                    <span class="inputTitle">نام :</span>
+                    <input class="form-control" id="name" name="name" type="text">
+                    <span class="error" id="nameErr">وارد کردن نام الزامی است</span>
+                </div>
 
-            <!--<div class="formRow">
-                <span class="inputTitle">نام خانوادگی :</span>
-                <input id="surname" name="surname" type="text">
-                <span class="error" id="surnameErr">نام خانوادگی را وارد کنید.</span>
-            </div> -->
+                <div class="formRow">
+                    <span class="inputTitle">آدرس ایمیل :</span>
+                    <input class="form-control" id="email" name="email" type="email">
+                    <span class="error" id="emailErr">ایمیل را وارد کنید</span>
+                </div>
 
-            <div class="formRow">
-                <span class="inputTitle">آدرس ایمیل :</span>
-                <input id="email" name="email" type="email">
-                <span class="error" id="emailErr">ایمیل را وارد کنید</span>
+                <div class="formRow" style="margin-top: 15px">
+                    <span class="formRow">پیام :</span>
+                    <textarea class="form-control" id="comment" style="margin-right: 6px" name="comment" cols="40"
+                              rows="6"></textarea>
+                    <span class="error" id="commentErr">متن پیام خالی است.</span>
+                </div>
+                <div dir="ltr" style="text-align: left">
+                    <input class="form-control btn btn-primary" id="submitBtn" type="submit" value="ارسال"
+                           class="farsi">
+                </div>
             </div>
-
-            <div class="formRow" style="margin-top: 15px">
-                <span class="formRow">پیام :</span>
-                <textarea id="comment" style="margin-right: 6px" name="comment" cols="40" rows="6"></textarea>
-                <span class="error" id="commentErr">متن پیام خالی است.</span>
-            </div>
-            <div dir="ltr" style="text-align: left">
-                <input id="submitBtn" type="submit" value="ارسال" class="farsi">
-            </div>
+            {{ csrf_field() }}
         </form>
     </div>
 

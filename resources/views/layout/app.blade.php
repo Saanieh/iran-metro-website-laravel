@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="lib/animate.css"/>
     <link rel="stylesheet" href="css/slider.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <title>{{$title}}</title>
 </head>
 

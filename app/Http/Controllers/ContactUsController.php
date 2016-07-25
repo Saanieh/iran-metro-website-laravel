@@ -15,6 +15,6 @@ class ContactUsController extends Controller
     public function post(){
         $input = Request::all();
 
-
+        return $input;
     }
 }
