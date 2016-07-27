@@ -18,3 +18,7 @@ Route::get('/contact-us', 'ContactUsController@index');
 Route::post('/contact-us', 'ContactUsController@post');
 
 Route::get('/about', 'AboutController@index');
+
+Route::auth();
+
+Route::get('/admin', 'AdminController@index');

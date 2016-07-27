@@ -1,4 +1,6 @@
-@extends('layout.app')
+@extends('layouts.app')
+
+@section('title','ارتباط با ما')
 
 @section('content')
     <link rel="stylesheet" href="lib/animate.css">

@@ -1,4 +1,6 @@
-@extends('layout.app')
+@extends('layouts.app')
+
+@section('title','درباره ما')
 
 @section('content')
 

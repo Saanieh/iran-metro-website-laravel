@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="lib/animate.css"/>
     <link rel="stylesheet" href="css/slider.css"/>
-    <title>{{$title}}</title>
+    <title>@yield('title')</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
     </ul>
 
     <ul style="position: absolute; left: 0px; display: inline; top: 0px; padding: 10px">
-        @if (isset($loggedIn))
+        @if (Auth::check())
             <a href="/logout">
                 <li class="link">خروج</li>
             </a>
@@ -44,17 +44,22 @@
     </ul>
 </div>
 
-@if (isset($msg))
+@if (Session::has('msg'))
     <div class="animated fadeIn">
         <span class="farsi topMsg animated fadeOutLeft" style="color: #b3ffa7; animation-delay: 3s">
-        {{$msg}}
+        {{Session::get('msg')}}
         </span>
     </div>
 @endif
 
+@if (Session::has('err'))
+    <span class="farsi topMsg animated fadeOutLeft"
+          style="color: red; animation-delay: 3s">{{Session::get('err')}}</span>
+@endif
+
 @if (isset($err))
     <span class="farsi topMsg animated fadeOutLeft"
-          style="color: red; animation-delay: 3s">! خطایی پیش آمده است !</span>
+          style="color: red; animation-delay: 3s">{{$err}}</span>
 @endif
 
 </body>
